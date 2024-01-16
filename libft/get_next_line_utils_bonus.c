@@ -69,11 +69,9 @@ char	*gnl_split_endl(t_save *save)
 {
 	const int	endl_idx = gnl_findchr(save, '\n');
 	int			idx;
-	int			memmove_idx;
 	char		*res;
 
 	idx = 0;
-	memmove_idx = 0;
 	res = gnl_calloc(endl_idx + 2, sizeof(char));
 	if (res == NULL)
 		return (NULL);
