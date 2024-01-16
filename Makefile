@@ -41,7 +41,7 @@ clean :
 	rm -rf $(BONUS_OBJS)
 
 $(NAME) : $(LIBFT) $(TARGET_OBJS)
-	$(CC) $(CFLAGS) -Llibft -lft $(TARGET_OBJS) -o $@
+	$(CC) -Llibft -lft $(TARGET_OBJS) -o $@
 
 %.o : %.c $(HEADER_DIR)/$(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
