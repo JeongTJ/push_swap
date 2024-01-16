@@ -123,10 +123,16 @@ int	ft_printf(const char *str, ...)
 	{
 		str = pf_not_convention(str, res);
 		if (str == NULL)
-			return ((int)pf_error_manager(res, 1) - 1);
+		{
+			pf_error_manager(res, 1);
+			return (-1);
+		}
 		str = pf_put_convention(str, res, argptr);
 		if (str == NULL)
-			return ((int)pf_error_manager(res, 1) - 1);
+		{
+			pf_error_manager(res, 1);
+			return (-1);			
+		}
 	}
 	va_end(argptr);
 	tmp = write(1, res->str, res->len);
